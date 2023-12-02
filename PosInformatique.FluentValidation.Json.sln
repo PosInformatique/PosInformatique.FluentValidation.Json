@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidation.Json", "src\FluentValidation.Json\FluentValidation.Json.csproj", "{167212EF-5D0C-4337-B194-AAD7ED65E1E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentValidation.Json", "src\FluentValidation.Json\FluentValidation.Json.csproj", "{167212EF-5D0C-4337-B194-AAD7ED65E1E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A43FECF3-4814-4A46-9BF3-3D2DB1AE8C9C}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,11 +14,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidation.Json.Tests", "tests\FluentValidation.Json.Tests\FluentValidation.Json.Tests.csproj", "{353E2153-FCBF-4075-BB65-B2B112271E72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentValidation.Json.Tests", "tests\FluentValidation.Json.Tests\FluentValidation.Json.Tests.csproj", "{353E2153-FCBF-4075-BB65-B2B112271E72}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1A79F106-1CB8-44EA-A384-BFC3409B7B60}"
 	ProjectSection(SolutionItems) = preProject
 		tests\.editorconfig = tests\.editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{36D08C64-14B2-4956-9F31-4AEB42856954}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{F25D728E-67C8-45EC-9B72-150324BEE428}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\github-actions-ci.yaml = .github\workflows\github-actions-ci.yaml
+		.github\workflows\github-actions-release.yml = .github\workflows\github-actions-release.yml
 	EndProjectSection
 EndProject
 Global
@@ -41,6 +49,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1A79F106-1CB8-44EA-A384-BFC3409B7B60} = {A43FECF3-4814-4A46-9BF3-3D2DB1AE8C9C}
+		{36D08C64-14B2-4956-9F31-4AEB42856954} = {A43FECF3-4814-4A46-9BF3-3D2DB1AE8C9C}
+		{F25D728E-67C8-45EC-9B72-150324BEE428} = {36D08C64-14B2-4956-9F31-4AEB42856954}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05F51EFD-F92A-41C6-9A20-E3F7E6C7829E}
