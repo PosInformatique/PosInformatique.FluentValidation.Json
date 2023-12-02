@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      versionprefix:
+        type: string
+        description: The version of the library
+        required: true
+        default: 0.0.0
+      versionsuffix:
+        type: string
+        description: The version suffix of the library (rc.1)
+        required: true
+        default: rc.1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET 6.x
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.x'
+      
+      - name: Build
+        run: dotnet pack 
+          --property:Configuration=Release
+          "src/FluentValidation.Json/FluentValidation.Json.csproj"
