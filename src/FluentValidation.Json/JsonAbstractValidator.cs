@@ -6,10 +6,19 @@
 
 namespace PosInformatique.FluentValidation.Json
 {
+    using System.Text.Json.Serialization;
     using global::FluentValidation;
 
+    /// <summary>
+    /// Base class for object validators which will use the JSON property name (based on <see cref="JsonPropertyNameAttribute"/>)
+    /// for the errors messages.
+    /// </summary>
+    /// <typeparam name="T">The type of the object being validated.</typeparam>
     public abstract class JsonAbstractValidator<T> : AbstractValidator<T>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JsonAbstractValidator{T}"/> class.
+        /// </summary>
         protected JsonAbstractValidator()
         {
         }
