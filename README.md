@@ -206,5 +206,5 @@ of the `Newtonsoft.Json` library.
 target the .NET Standard 2.0 and can be used with various of .NET architecture (.NET Core, .NET Framework,...).
 
 - The [PosInformatique.FluentValidation.Json](https://www.nuget.org/packages/PosInformatique.FluentValidation.Json/) library
-use the 5.0.0 version of the [System.Text.Json](https://www.nuget.org/packages/System.Text.Json/) NuGet package
+use the 4.6.0 version of the [System.Text.Json](https://www.nuget.org/packages/System.Text.Json/) NuGet package
 and can be used with old projects that target this library version and earlier.

@@ -54,7 +54,7 @@ namespace PosInformatique.FluentValidation.Json
 
             path.Reverse();
 
-            return string.Join('.', path);
+            return string.Join(".", path);
         }
 
         private static string GetJsonPropertyName(PropertyInfo property)
