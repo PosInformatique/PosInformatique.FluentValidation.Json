@@ -1,5 +1,6 @@
 # PosInformatique.FluentValidation.Json
-PosInformatique.FluentValidation.Json is a library based on FluentValidation to validate JSON objects for the Web API.
+[PosInformatique.FluentValidation.Json](https://www.nuget.org/packages/PosInformatique.FluentValidation.Json/)
+is a library based on FluentValidation to validate JSON objects for the Web API.
 
 By default, when using the [FluentValidation](https://www.nuget.org/packages/FluentValidation)
 library to validate an object, the property name (or related display name) are used in the error message.
@@ -65,7 +66,6 @@ When performing the validation of inside a ASP .NET MVC API application
 the following JSON problem is returned by default:
 
 ```json
-
 {
   "value": {
     "title": "One or more validation errors occurred.",
@@ -84,7 +84,6 @@ the following JSON problem is returned by default:
   "statusCode": 400,
   "contentType": "application/problem+json"
 }
-
 ```
 
 Here, because we expose this JSON content to developers, we prefered to
@@ -93,7 +92,6 @@ have the JSON property name path in the errors messages.
 This the main goal of this library to return the following JSON result instead:
 
 ```json
-
 {
   "value": {
     "title": "One or more validation errors occurred.",
@@ -112,13 +110,12 @@ This the main goal of this library to return the following JSON result instead:
   "statusCode": 400,
   "contentType": "application/problem+json"
 }
-
 ```
 
 ## Installing from NuGet
 The [PosInformatique.FluentValidation.Json](https://www.nuget.org/packages/PosInformatique.FluentValidation.Json/)
 library is available directly on the
-[![Nuget](https://img.shields.io/nuget/v/PosInformatique.FluentValidation.Json)](https://www.nuget.org/packages/PosInformatique.FluentAssertions.Json/)
+[![Nuget](https://img.shields.io/nuget/v/PosInformatique.FluentValidation.Json)](https://www.nuget.org/packages/PosInformatique.FluentValidation.Json/)
 official website.
 
 To download and install the library to your Visual Studio unit test projects use the following NuGet command line 
@@ -196,3 +193,18 @@ public class ProductController : ControllerBase
 Do not hesitate to read the
 [FluentValidation ASP .NET Integration](https://docs.fluentvalidation.net/en/latest/aspnet.html)
 documentation for more information.
+
+## JSON serialization library
+This library use the JSON property names specified by the `[JsonPropertyName]` attributes
+with the Microsoft `System.Text.Json`.
+
+This library **DO NOT** use the property names specified by the `[JsonProperty]` attributes
+of the `Newtonsoft.Json` library.
+
+## Library dependencies
+- The [PosInformatique.FluentValidation.Json](https://www.nuget.org/packages/PosInformatique.FluentValidation.Json/) library
+target the .NET Standard 2.0 and can be used with various of .NET architecture (.NET Core, .NET Framework,...).
+
+- The [PosInformatique.FluentValidation.Json](https://www.nuget.org/packages/PosInformatique.FluentValidation.Json/) library
+use the 5.0.0 version of the [System.Text.Json](https://www.nuget.org/packages/System.Text.Json/) NuGet package
+and can be used with old projects that target this library version and earlier.
