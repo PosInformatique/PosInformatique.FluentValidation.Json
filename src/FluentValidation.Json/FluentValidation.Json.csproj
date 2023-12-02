@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Description>PosInformatique.FluentValidation.Json is a library based on FluentValidation to validate JSON objects for the Web API.</Description>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/PosInformatique/PosInformatique.FluentValidation.Json</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>
+      1.0.0
+      - Initial version
+    </PackageReleaseNotes>
+    <PackageTags>validation fluent json errors api webapi serialization</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +30,13 @@
 
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
