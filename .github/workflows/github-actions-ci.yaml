@@ -1,4 +1,4 @@
-name: CI
+name: Continuous Integration
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
       #  run: dotnet restore
       
       - name: Build
-        run: dotnet build --property:Configuration=Debug "PosInformatique.FluentAssertions.Json.sln"
+        run: dotnet build --property:Configuration=Debug "PosInformatique.FluentValidation.Json.sln"
 
       - name: Test with the dotnet CLI
-        run: dotnet test --property:Configuration=Debug "PosInformatique.FluentAssertions.Json.sln"
+        run: dotnet test --property:Configuration=Debug "PosInformatique.FluentValidation.Json.sln"
