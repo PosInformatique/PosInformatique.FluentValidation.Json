@@ -29,6 +29,9 @@ public class Product
     {
     }
 
+    [JsonPropertyName("category")]
+    public ProductCategory? Category { get; set; }
+
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
@@ -86,7 +89,7 @@ the following JSON problem is returned by default:
 }
 ```
 
-Here, because we expose this JSON content to developers, we prefered to
+Here, because we expose this JSON content to developers, we preferred to
 have the JSON property name path in the errors messages.
 
 This the main goal of this library to return the following JSON result instead:
