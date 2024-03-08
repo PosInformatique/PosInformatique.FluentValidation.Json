@@ -39,9 +39,9 @@ namespace PosInformatique.FluentValidation.Json
             // The SetDisplayName() method is not available in the IValidationRule<T>.
             // A feature request has been submitted on the GitHub of FluentValidation to avoid using reflection:
             // https://github.com/FluentValidation/FluentValidation/issues/2179
-            var setDisplayNameMethod = rule.GetType().GetMethod("SetDisplayName", new[] { typeof(string) })!;
+            var setDisplayNameMethod = rule.GetType().GetMethod("SetDisplayName", [typeof(string)])!;
 
-            setDisplayNameMethod.Invoke(rule, new object[] { name });
+            setDisplayNameMethod.Invoke(rule, [name]);
         }
     }
 }
