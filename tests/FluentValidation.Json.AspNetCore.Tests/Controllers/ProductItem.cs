@@ -1,18 +1,20 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ProductCategoryValidator.cs" company="P.O.S Informatique">
+// <copyright file="ProductItem.cs" company="P.O.S Informatique">
 //     Copyright (c) P.O.S Informatique. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
 namespace PosInformatique.FluentValidation.Json.AspNetCore.Tests
 {
-    using global::FluentValidation;
+    using System.Text.Json.Serialization;
 
-    public class ProductCategoryValidator : AbstractValidator<ProductCategory>
+    public class ProductItem
     {
-        public ProductCategoryValidator()
+        public ProductItem()
         {
-            this.RuleFor(p => p.Name).NotEmpty();
         }
+
+        [JsonPropertyName("color")]
+        public string? Color { get; set; }
     }
 }

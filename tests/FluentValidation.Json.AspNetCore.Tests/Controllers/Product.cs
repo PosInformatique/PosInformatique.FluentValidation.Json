@@ -6,6 +6,7 @@
 
 namespace PosInformatique.FluentValidation.Json.AspNetCore.Tests
 {
+    using System.Collections.ObjectModel;
     using System.Text.Json.Serialization;
 
     public class Product
@@ -22,5 +23,8 @@ namespace PosInformatique.FluentValidation.Json.AspNetCore.Tests
 
         [JsonPropertyName("price")]
         public decimal Price { get; set; }
+
+        [JsonPropertyName("items")]
+        public Collection<ProductItem>? Items { get; set; }
     }
 }

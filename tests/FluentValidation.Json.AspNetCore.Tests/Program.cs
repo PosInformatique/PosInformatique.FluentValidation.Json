@@ -15,8 +15,10 @@ namespace PosInformatique.FluentValidation.Json.AspNetCore.Tests
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
-            builder.Services.AddSingleton<IValidator<Product>, ProductValidator>();
-            builder.Services.AddSingleton<IValidator<ProductCategory>, ProductCategoryValidator>();
+            builder.Services.AddTransient<IValidator<Product>, ProductValidator>();
+            builder.Services.AddTransient<IValidator<ProductCategory>, ProductCategoryValidator>();
+
+            ValidatorOptions.Global.UseJsonProperties();
 
             var app = builder.Build();
 

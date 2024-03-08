@@ -8,7 +8,7 @@ namespace PosInformatique.FluentValidation.Json.AspNetCore.Tests
 {
     using global::FluentValidation;
 
-    public class ProductValidator : JsonAbstractValidator<Product>
+    public class ProductValidator : AbstractValidator<Product>
     {
         private readonly IValidator<ProductCategory> productCategoryValidator;
 
@@ -21,6 +21,11 @@ namespace PosInformatique.FluentValidation.Json.AspNetCore.Tests
             this.RuleFor(p => p.Description).NotNull().NotEmpty();
             this.RuleFor(p => p.Price).GreaterThan(0);
             this.RuleFor(p => p.Category).NotNull().SetValidator(this.productCategoryValidator!);
+
+            this.RuleForEach(p => p.Items).NotNull().ChildRules(item =>
+            {
+                item.RuleFor(i => i.Color).NotNull().NotEmpty();
+            });
         }
     }
 }

@@ -129,34 +129,27 @@ Install-Package PosInformatique.FluentValidation.Json
 
 ## How it is work?
 
-This library is really easy to use and do not need lot of changes if you already implemented
-`AbstractValidator<T>` validators.
+This library is really easy to use and just required to change the `ValidatorOptions.Global` configuration.
 
-To use JSON property names when validating a DTO class, just inherit from the
-`JsonAbstractValidator<T>` instead of `AbstractValidator<T>`.
+To use JSON property names when validating a DTO class, just call the `UseJsonProperties()` at the startup of the application.
 
-For example, to validate the `Product` or `ProductCategory` classes of the previous example,
-use the following `JsonAbstractValidator<T>` implementations:
+For example, in ASP .NET application just call the `UseJsonProperties()` method at the initialization of the ASP .NET infrastructure:
 
 ```csharp
-public class ProductValidator : JsonAbstractValidator<Product>
+public static void Main(string[] args)
 {
-    public ProductValidator()
-    {
-        this.RuleLevelCascadeMode = CascadeMode.Stop;
+    var builder = WebApplication.CreateBuilder(args);
 
-        this.RuleFor(p => p.Description).NotNull().NotEmpty();
-        this.RuleFor(p => p.Price).GreaterThan(0);
-        this.RuleFor(p => p.Category).NotNull().SetValidator(new ProductCategoryValidator());
-    }
-}
+    ValidatorOptions.Global.UseJsonProperties();
 
-public class ProductCategoryValidator : JsonAbstractValidator<ProductCategory>
-{
-    public ProductCategoryValidator()
-    {
-        this.RuleFor(p => p.Name).NotEmpty();
-    }
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    app.UseAuthorization();
+
+    app.MapControllers();
+
+    app.Run();
 }
 ```
 
