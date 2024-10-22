@@ -11,6 +11,9 @@
     <PackageProjectUrl>https://github.com/PosInformatique/PosInformatique.FluentValidation.Json</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>
+      1.0.1
+      - Fix the documentation
+      
       1.0.0
       - Initial version
     </PackageReleaseNotes>

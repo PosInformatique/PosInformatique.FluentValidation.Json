@@ -1,8 +1,10 @@
 # PosInformatique.FluentValidation.Json
 [PosInformatique.FluentValidation.Json](https://www.nuget.org/packages/PosInformatique.FluentValidation.Json/)
-is a library based on FluentValidation to validate JSON objects for the Web API.
+is a library based on [FluentValidation](https://docs.fluentvalidation.net/) to validate JSON objects for the Web API.
 
-By default, when using the [FluentValidation](https://www.nuget.org/packages/FluentValidation)
+[![NuGet](https://img.shields.io/nuget/v/PosInformatique.FluentValidation.Json?label=PosInformatique.FluentValidation.Json)](https://www.nuget.org/packages/PosInformatique.FluentValidation.Json/)
+
+By default, when using the [FluentValidation](https://docs.fluentvalidation.net/)
 library to validate an object, the property name (or related display name) are used in the error message.
 This can be useful for functional validation to display to users on the views of the application.
 
@@ -41,7 +43,7 @@ public class Product
 ```
 
 If you want to validate the C# `Product` class, you have to create a validator
-which inherit from the `AbstractValidator<T>` class.
+which inherit from the `AbstractValidator<T>` class of [FluentValidation](https://docs.fluentvalidation.net/) library.
 
 ```csharp
 public class ProductValidator : AbstractValidator<Product>
@@ -159,7 +161,7 @@ Next, you use your own validation strategy depending of the context usage.
 For example, if you ASP .NET Core to create an Web API, you can use the following code
 and returns an error as JSON problem format:
 
-```json
+```csharp
 [ApiController]
 [Route("[controller]")]
 public class ProductController : ControllerBase
